@@ -119,8 +119,8 @@ defmodule Modbux.Tcp.Client do
   @doc """
   In passive mode (active: false), reads the confirmation of the connected Modbux Server.
   """
-  def confirmation(pid) do
-    GenServer.call(pid, :confirmation)
+  def confirmation(pid, timeout \\ 5000) do
+    GenServer.call(pid, :confirmation, timeout)
   end
 
   @doc """
